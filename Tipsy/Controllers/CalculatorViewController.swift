@@ -15,6 +15,7 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func tipChanged(_ sender: UIButton) {
+        zeroPctButton.isSelected = true
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {

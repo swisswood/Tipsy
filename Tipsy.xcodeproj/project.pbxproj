@@ -14,6 +14,7 @@
 		0F8927AF28E1FE8400FFB8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8927A828E1FE8400FFB8A1 /* AppDelegate.swift */; };
 		0F8927B028E1FE8400FFB8A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F8927A928E1FE8400FFB8A1 /* Info.plist */; };
 		0F8927B128E1FE8400FFB8A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8927AA28E1FE8400FFB8A1 /* SceneDelegate.swift */; };
+		0F943BDD28E2021F0089D5A8 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F943BDC28E2021F0089D5A8 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0F8927A828E1FE8400FFB8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8927A928E1FE8400FFB8A1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8927AA28E1FE8400FFB8A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0F943BDC28E2021F0089D5A8 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				0F8927A228E1FE8400FFB8A1 /* CalculatorViewController.swift */,
+				0F943BDC28E2021F0089D5A8 /* ResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				0F8927AF28E1FE8400FFB8A1 /* AppDelegate.swift in Sources */,
 				0F8927AB28E1FE8400FFB8A1 /* CalculatorViewController.swift in Sources */,
 				0F8927B128E1FE8400FFB8A1 /* SceneDelegate.swift in Sources */,
+				0F943BDD28E2021F0089D5A8 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
