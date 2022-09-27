@@ -9,6 +9,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var twentyPctButton: UIButton!
     @IBOutlet weak var splitNumberLabel: UILabel!
     
+    var totalBrain = TotalBrain()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,19 +38,27 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let bill = Float(billTextField.text!)
-       
+        let bill = Float(billTextField.text ?? "123.56")
+        let splitNumber = Float(splitNumberLabel.text ?? "2")
+        
         if zeroPctButton.isSelected == true {
-            print(bill! * 1.0 / Float(splitNumberLabel.text!)!)
+            totalBrain.calculateTip(bill: bill!, pct: 1.0, splitNumber: splitNumber!)
         } else if tenPctButton.isSelected == true {
-            print(bill! * 1.1 / Float(splitNumberLabel.text!)!)
+            totalBrain.calculateTip(bill: bill!, pct: 1.1, splitNumber: splitNumber!)
         } else {
-            print(bill! * 1.2 / Float(splitNumberLabel.text!)!)
+            totalBrain.calculateTip(bill: bill!, pct: 1.2, splitNumber: splitNumber!)
         }
         
-        
+        performSegue(withIdentifier: "PresentModally", sender: self)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PresentModally" {
+            let destination = segue.destination as! ResultsViewController
+            destination.total = totalBrain.getTotal()
+            destination.tipPercentage = totalBrain.getTipPercentage()
+            destination.numberOfPeople = totalBrain.getNumberOfPeople()
+        }
+    }
 }
 
