@@ -11,7 +11,6 @@ struct TotalBrain {
     
     var total: Total?
     func getTotal() -> String {
-//        let total = String(format: "%.2f", total?.total ?? 56.32)
         return total?.total ?? "56.32"
     }
     
