@@ -38,15 +38,15 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let bill = Float(billTextField.text ?? "123.56")
-        let splitNumber = Float(splitNumberLabel.text ?? "2")
+        let bill = Float(billTextField.text!)
+        let splitNumber = Float(splitNumberLabel.text!)
         
         if zeroPctButton.isSelected == true {
-            totalBrain.calculateTip(bill: bill!, pct: 1.0, splitNumber: splitNumber!)
+            totalBrain.calculateTip(bill: bill ?? 123.56, pct: 0, splitNumber: splitNumber!)
         } else if tenPctButton.isSelected == true {
-            totalBrain.calculateTip(bill: bill!, pct: 1.1, splitNumber: splitNumber!)
-        } else {
-            totalBrain.calculateTip(bill: bill!, pct: 1.2, splitNumber: splitNumber!)
+            totalBrain.calculateTip(bill: bill ?? 123.56, pct: 10, splitNumber: splitNumber!)
+        } else if twentyPctButton.isSelected == true {
+            totalBrain.calculateTip(bill: bill ?? 123.56, pct: 20, splitNumber: splitNumber!)
         }
         
         performSegue(withIdentifier: "PresentModally", sender: self)
@@ -56,8 +56,8 @@ class CalculatorViewController: UIViewController {
         if segue.identifier == "PresentModally" {
             let destination = segue.destination as! ResultsViewController
             destination.total = totalBrain.getTotal()
-            destination.tipPercentage = totalBrain.getTipPercentage()
             destination.numberOfPeople = totalBrain.getNumberOfPeople()
+            destination.tipPercentage = totalBrain.getTipPercentage()
         }
     }
 }

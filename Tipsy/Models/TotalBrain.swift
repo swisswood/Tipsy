@@ -11,8 +11,8 @@ struct TotalBrain {
     
     var total: Total?
     func getTotal() -> String {
-        let total = String(format: "%.2f", total?.total ?? 56.32)
-        return total
+//        let total = String(format: "%.2f", total?.total ?? 56.32)
+        return total?.total ?? "56.32"
     }
     
     func getNumberOfPeople() -> String {
@@ -24,9 +24,9 @@ struct TotalBrain {
     }
     
     mutating func calculateTip(bill: Float, pct: Float, splitNumber: Float) {
-        let total = String(bill * pct / splitNumber)
-        let people = String(splitNumber)
-        let pct = String(pct * 100 - 100)
+        let total = String(format:"%.2f",(bill + (bill * pct / 100)) / splitNumber)
+        let people = String(format:"%.0f", splitNumber)
+        let pct = String(format:"%.0f", pct)
         
         self.total = Total(total: total, numberOfPeople: people, tipPercentage: pct)
     }
